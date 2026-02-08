@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinarky - Guía de Novedades</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/image" href="img/favicon.png">
+</head>
+<body class="bg-dark text-light">
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="https://dinarky.netlify.app">
+                Logo Dinarky
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+
+                <div class="navbar-icons">
+                    
+                    <a href="https://www.tiktok.com/@dinarkyrp?_r=1&_t=ZN-913GLO1j9nO" class="nav-icon-link" title="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="https://discord.gg/jSgppTzzQH" class="nav-icon-link" title="Discord">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/dinarkyoficial?igsh=MXB2ZXl2bmpkdHFzdQ==" class="nav-icon-link" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container my-5 text-center">
+        <h1 class="display-4 fw-bold">Novedades del Servidor</h1>
+        <p class="lead">Averigua todas las novedades y sistemas que traerá la nueva temporada de Dinarky.</p>
+    </header>
+
+    <main class="container mb-5">
+        <div class="row g-4">
+
+            <aside class="col-12 col-lg-4" onclick="goToLink('tiers/tiers.html')" style="cursor: pointer;"> 
+                <div class="card h-100 bg-secondary text-white border-0 shadow hover-scale">
+                    <div class="card-body text-center d-flex flex-column align-items-center">
+                        
+                        <div class="preview-grid">
+                            <img src="img/res-vanilla/armor_hide.webp" alt="Armor 1">
+                            <img src="img/res-vanilla/armor_chitin.webp" alt="Armor 2">
+                            <img src="img/res-vanilla/armor_metal.webp" alt="Armor 3">
+                            <img src="img/res-vanilla/armor_riot.webp" alt="Armor 4">
+                        </div>
+
+                        <h5 class="card-title fw-bold mt-3">Tiers de Equipamiento</h5>
+                        <p class="card-text small">
+                            Descubre cómo están compuestos los diferentes niveles. Analiza los atributos, materiales y requisitos de cada grado. El conocimiento es tu mejor defensa ante los desafíos que vienen.
+                            <br><br>
+                            <i class="opacity-75">«Cada pieza cuenta una historia de victoria. Explora la evolución de tu personaje y toma tus decisiones con sabiduría.»</i>
+                        </p>
+                        
+                        <div class="mt-auto">
+                            <span class="badge bg-warning text-dark">Progresión</span>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="col-12 col-lg-8">
+                <div class="row g-3" id="materialGrid">
+
+                    <div class="col-6 col-md-4 material-item">
+                        <div class="card h-100 bg-secondary text-white border-0 shadow">
+                            <div class="card-body text-center d-flex flex-column align-items-center">
+                                <img src="img/res-dinarky/lingote_titanio.png" class="img-material" alt="Metales">
+                                <h5 class="card-title fw-bold">Metales</h5>
+                                <p class="card-text small flex-grow-1">El alma de la forja. Encuentra desde lingotes básicos hasta las aleaciones más resistentes para cimentar tus armas y protecciones.</p>
+                                <span class="badge bg-info text-dark mt-2">Materiales</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 material-item">
+                        <div class="card h-100 bg-secondary text-white border-0 shadow">
+                            <div class="card-body text-center d-flex flex-column align-items-center">
+                                <img src="img/res-dinarky/telas_telasuperior.png" class="img-material" alt="Tejidos y Pelajes">
+                                <h5 class="card-title fw-bold">Tejidos y Pelajes</h5>
+                                <p class="card-text small flex-grow-1">Protección adaptable. Recolecta fibras, cueros y pieles para confeccionar desde vestimenta ligera hasta equipo de supervivencia avanzado."</p>
+                                <span class="badge bg-info text-dark mt-2">Materiales</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 material-item">
+                        <div class="card h-100 bg-secondary text-white border-0 shadow">
+                            <div class="card-body text-center d-flex flex-column align-items-center">
+                                <img src="img/res-dinarky/catalizadores_acidosulfurico.png" class="img-material" alt="Químicos">
+                                <h5 class="card-title fw-bold">Químicos</h5>
+                                <p class="card-text small flex-grow-1">La ciencia del progreso. Mezclas y sustancias reactivas necesarias para procesos industriales o fabricación de materiales de alto rendimiento.</p>
+                                <span class="badge bg-info text-dark mt-2">Materiales</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 material-item">
+                        <div class="card h-100 bg-secondary text-white border-0 shadow">
+                            <div class="card-body text-center d-flex flex-column align-items-center">
+                                <img src="img/res-dinarky/vidrio_soplado.png" class="img-material" alt="Compuestos">
+                                <h5 class="card-title fw-bold">Compuestos</h5>
+                                <p class="card-text small flex-grow-1">Ingeniería de vanguardia. Materiales sintéticos de alta resistencia diseñados para soportar condiciones extremas y potenciar tu tecnología.</p>
+                                <span class="badge bg-info text-dark mt-2">Materiales</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 material-item">
+                        <div class="card h-100 bg-secondary text-white border-0 shadow">
+                            <div class="card-body text-center d-flex flex-column align-items-center">
+                                <img src="img/res-dinarky/herrajes_titanio.png" class="img-material" alt="Metales">
+                                <h5 class="card-title fw-bold">Herrajes</h5>
+                                <p class="card-text small flex-grow-1">La unión hace la fuerza. Componentes mecánicos y piezas de sujeción indispensables para el ensamblaje de estructuras y maquinaria compleja.</p>
+                                <span class="badge bg-info text-dark mt-2">Materiales</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-4 material-item">
+                        <div class="card h-100 bg-secondary text-white border-0 shadow">
+                            <div class="card-body text-center d-flex flex-column align-items-center">
+                                <img src="img/res-dinarky/gemas_topacio.png" class="img-material" alt="Metales">
+                                <h5 class="card-title fw-bold">Especiales</h5>
+                                <p class="card-text small flex-grow-1">Tesoros de tierras lejanas. Recursos únicos y reliquias limitadas que solo los más audaces logran obtener en eventos y desafíos de leyenda.</p>
+                                <span class="badge bg-danger mt-2">Eventos</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
+        </div> 
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

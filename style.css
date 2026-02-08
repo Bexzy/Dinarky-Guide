@@ -1,0 +1,124 @@
+/* --- Global Config --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('img/thecenter_bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: system-ui, -apple-system, sans-serif;
+    
+    /* no saques esto o el titul hace bop bruno */
+    padding-top: 80px; 
+}
+
+/* --- Navbar --- */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.9) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 255, 200, 0.1);
+}
+
+/* --- Tarjetas de Secciones --- */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(0, 255, 200, 0.4) !important; /* Cyan The Center */
+    box-shadow: 0 10px 20px rgba(0, 255, 200, 0.2) !important;
+}
+
+/* --- Imágenes e Iconos --- */
+.item-icon {
+    font-size: 3rem;
+}
+
+.img-material {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+    filter: drop-shadow(0 0 5px rgba(255,255,255,0.2));
+}
+
+/* --- Media Queries --- */
+@media (max-width: 576px) {
+    .display-4 { font-size: 2.5rem; }
+}
+
+/* Contenedor 2x2 */
+.preview-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr;    
+    gap: 8px;
+    
+    /* Tamaño imgs*/
+    width: 240px; 
+    height: 240px;
+    
+    margin: 0 auto; 
+}
+
+/* Las imágenes dentro */
+.preview-grid img {
+    width: 100%;       
+    height: 100%;      
+    object-fit: cover;
+    
+    background: rgba(0, 0, 0, 0.2); 
+    border-radius: 8px;
+    padding: 0; 
+}
+
+/* --- FONT AWESOME --- */
+.navbar-icons {
+    display: flex;
+    gap: 15px; 
+    margin-left: auto; 
+    align-items: center;
+}
+
+.nav-icon-link {
+    width: 40px; 
+    height: 40px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    
+    color: white; 
+    text-decoration: none;
+    
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Ajustes FontAwesome (etiqueta <i>) */
+.nav-icon-link i {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* --- EFECTO HOVER --- */
+.nav-icon-link:hover {
+    border-color: #00ffc8; 
+    color: #00ffc8;
+    transform: scale(1.15); 
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.4); 
+    background: rgba(0, 255, 200, 0.1); 
+}
