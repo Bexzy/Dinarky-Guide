@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinarky - Tiers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="tiers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/image" href="../img/favicon.png">
+</head>
+<body class="bg-dark text-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top" style="border-bottom: 1px solid rgba(255,255,255,0.1);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="https://dinarky.netlify.app">
+                Logo Dinarky
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+
+                <div class="navbar-icons">
+                    <a class="navbar-text link-primary text-decoration-none" href="../index.html">
+                            <i class="fa-solid fa-reply"></i>
+                            &nbspVolver
+                    </a>
+                    
+                    <a href="https://www.tiktok.com/@dinarkyrp?_r=1&_t=ZN-913GLO1j9nO" class="nav-icon-link" title="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="https://discord.gg/jSgppTzzQH" class="nav-icon-link" title="Discord">
+                        <i class="fa-brands fa-discord"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/dinarkyoficial?igsh=MXB2ZXl2bmpkdHFzdQ==" class="nav-icon-link" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="timeline-container">
+        <div class="timeline-line"></div>
+        <div class="timeline-dot" data-target="tierScrap"></div>
+        <div class="timeline-dot" data-target="tierMetal"></div>
+        <div class="timeline-dot" data-target="tierAcero"></div>
+        <div class="timeline-dot" data-target="tierTitanio"></div>
+    </div>
+
+    <main class="snap-container">
+
+        <section class="tier-section" id="tierScrap">
+            <div class="tier-container">
+                <div class="tier-header">
+                    <h1>SCRAP</h1>
+                    <span class="badge bg-secondary">Tier 0</span>
+                </div>
+
+                <div class="content-wrapper">
+                    <div class="description-card">
+                        <h4>Supervivencia</h4>
+                        <p>
+                            El Tier Scrap existe por la necesidad de diferenciar al usuario que acaba de ingresar. 
+                            <br><br>
+                            Consiste en un equipamiento hecho con residuos de la antigua civilización y restos de criaturas. 
+                            Todavía incapaz de procesar materiales como el Metal puro, generas herramientas y armas con lo que encuentras a mano.
+                            <br><br>
+                            Es el punto de partida para todo superviviente, ideal para recolección básica y defensa personal.
+                        </p>
+                    </div>
+
+                    <div class="cards-grid">
+
+                        
+                        <div class="grid-column">
+                            <div class="tier-card">
+                                <div class="card-category-title">Armadura</div>
+                                <div class="mini-inventory">
+                                    <div class="mini-slot" data-name="Set Piel"><img src="../img/res-vanilla/armor_hide.webp"></div>
+                                </div>
+                            </div>
+
+                            <div class="tier-card">
+                                <div class="card-category-title">Armas</div>
+                                <div class="mini-inventory">
+                                    <div class="mini-slot" data-name="Espada de Scrap"><img src="../img/res-mod/weapon_scrap_sword.png"></div>
+                                    <div class="mini-slot" data-name="Bate de Scrap"><img src="../img/res-mod/weapon_scrap_bat.png"></div>
+                                    <div class="mini-slot" data-name="Antorcha"><img src="../img/res-vanilla/weapon_torch.webp"></div>
+                                    <div class="mini-slot" data-name="Arco"><img src="../img/res-vanilla/weapon_bow.webp"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid-column">
+                            <div class="tier-card">
+                                <div class="card-category-title">Herramientas</div>
+                                <div class="mini-inventory">
+                                    <div class="mini-slot" data-name="Pico de Scrap"><img src="../img/res-mod/tool_scrap_pickaxe.png"></div>
+                                    <div class="mini-slot" data-name="Hacha de Scrap"><img src="../img/res-mod/tool_scrap_axe.png"></div>
+                                </div>
+                            </div>
+
+                            <div class="tier-card">
+                                <div class="card-category-title">Equipamiento</div>
+                                <div class="mini-inventory">
+                                    <div class="mini-slot" data-name="Paracaídas"><img src="../img/res-vanilla/extra_parachute.webp"></div>
+                                    <div class="mini-slot" data-name="Boleadora"><img src="../img/res-vanilla/extra_bola.webp"></div>
+                                    <div class="mini-slot" data-name="Catalejo"><img src="../img/res-vanilla/extra_spyglass.webp"></div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="tier-section" id="tierMetal">
+            <div class="tier-container">
+                <div class="tier-header">
+                    <h1>METAL</h1>
+                    <span class="badge bg-primary text-light">Tier 1</span>
+                </div>
+
+                <div class="content-wrapper">
+                    <div class="description-card">
+                        <h4>FUNDICIÓN</h4>
+                        <p>
+                            El salto a la herrería marca el inicio de las facciones reales. Las armaduras de metal (Flak) ofrecen protección balística real.
+                            <br><br>
+                            Este tier introduce la pólvora y las armas de fuego de un solo tiro.
+                        </p>
+                    </div>
+
+                    <div class="cards-grid">
+                        
+                        <div class="grid-column">
+                            <div class="tier-card">
+                                <div class="card-category-title">Armadura</div>
+                                <div class="mini-inventory">
+                                    <div class="mini-slot" data-name="Set Chitin"><img src="../img/res-vanilla/armor_chitin.webp"></div>
+                                </div>
+                            </div>
+
+                            <div class="tier-card">
+                                <div class="card-category-title">Armas</div>
+                                <div class="mini-inventory">
+                                    <div class="mini-slot" data-name="Lanza de Metal"><img src="../img/res-vanilla/weapon_metal_spear.webp"></div>
+                                    <div class="mini-slot" data-name="Espada de Metal"><img src="../img/res-vanilla/weapon_metal_sword.webp"></div>
+                                    <div class="mini-slot" data-name="Ballesta"><img src="../img/res-vanilla/weapon_crossbow.webp"></div>
+                                    <div class="mini-slot" data-name="Escopeta Primitiva"><img src="../img/res-vanilla/weapon_prim_shotgun.webp"></div>
+                                    <div class="mini-slot" data-name="Revolver"><img src="../img/res-vanilla/weapon_revolver.webp"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid-column">
+                            <div class="tier-card">
+                                <div class="card-category-title">Herramientas</div>
+                                <div class="mini-inventory">
+                                    <div class="mini-slot" data-name="Pico de Metal"><img src="../img/res-vanilla/tool_metal_pick.webp"></div>
+                                    <div class="mini-slot" data-name="Hacha de Metal"><img src="../img/res-vanilla/tool_metal_axe.webp"></div>
+                                    <div class="mini-slot" data-name="Hoz de Metal"><img src="../img/res-vanilla/tool_metal_scyte.webp"></div>
+                                </div>
+                            </div>
+
+                            <div class="tier-card">
+                                <div class="card-category-title">Equipamiento</div>
+                                <div class="mini-inventory">
+                                    <div class="mini-slot" data-name="Mira"><img src="../img/res-vanilla/extra_scope.webp"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="tier-section" id="tierAcero">
+            <div class="tier-container">
+                <div class="tier-header">
+                    <h1>ACERO</h1>
+                    <span class="badge bg-warning">Tier 2</span>
+                </div>
+
+                <div class="content-wrapper">
+                    <div class="description-card">
+                        <h4>INDUSTRIALIZACIÓN</h4>
+                        <p>
+                            El acero y los polímeros avanzados permiten la creación de armamento militar moderno. 
+                            La armadura antidisturbios (Riot) ofrece la mejor protección física.
+                        </p>
+                    </div>
+
+                    <div class="cards-grid">
+                        <div class="grid-column">
+                            <div class="tier-card">
+                                <div class="card-category-title">Armadura</div>
+                                <div class="mini-inventory">
+                                    <div class="mini-slot" data-name="Set Metal"><img src="../img/res-vanilla/armor_metal.webp"></div>
+                                </div>
+                            </div>
+                            <div class="tier-card">
+                                <div class="card-category-title">Armas</div>
+                                <div class="mini-inventory">
+                                    <div class="mini-slot" data-name="Rifle Prim"><img src="../img/res-vanilla/weapon_prim_rifle.webp"></div>
+                                    <div class="mini-slot" data-name="Pistola Fab"><img src="../img/res-vanilla/weapon_fab_pistol.webp"></div>
+                                    <div class="mini-slot" data-name="Lanza Arpones"><img src="../img/res-vanilla/weapon_arpoon.webp"></div>
+                                    <div class="mini-slot" data-name="Rifle de Asalto"><img src="../img/res-vanilla/weapon_assault_rifle.webp"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid-column">
+                            <div class="tier-card">
+                                <div class="card-category-title">Herramientas</div>
+                                <div class="mini-inventory">
+                                    <div class="mini-slot" data-name="Motosierra"><img src="../img/res-vanilla/tool_chainsaw.webp"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="tier-section" id="tierTitanio">
+            <div class="tier-container">
+                <div class="tier-header">
+                    <h1>TITANIO</h1>
+                    <span class="badge bg-danger text-light">Tier 3</span>
+                </div>
+
+                <div class="content-wrapper">
+                    <div class="description-card">
+                        <h4>TECNOLOGÍA AVANZADA</h4>
+                        <p>
+                            La cúspide de la evolución humana en el ARKA. Equipamiento potenciado por Elemento y aleaciones de Titanio.
+                        </p>
+                    </div>
+
+                    <div class="cards-grid">
+                        <div class="grid-column">
+                            <div class="tier-card">
+                                <div class="card-category-title">Armadura</div>
+                                <div class="mini-inventory">
+                                    <div class="mini-slot" data-name="Set Riot"><img src="../img/res-vanilla/armor_riot.webp"></div>
+                                </div>
+                            </div>
+                            <div class="tier-card">
+                                <div class="card-category-title">Armas</div>
+                                <div class="mini-inventory">
+                                    <div class="mini-slot" data-name="Escopeta Pump"><img src="../img/res-vanilla/weapon_pump_shotgun.webp"></div>
+                                    <div class="mini-slot" data-name="Arco Comp"><img src="../img/res-vanilla/weapon_comp_bow.webp"></div>
+                                    <div class="mini-slot" data-name="Rifle Fab"><img src="../img/res-vanilla/weapon_fab_rifle.webp"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid-column">
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="tiers.js"></script>
+</body>
+</html>

@@ -1,0 +1,292 @@
+/* Global Config */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { height: 100%; background-color: #000; color: white; font-family: system-ui, -apple-system, sans-serif; overflow: hidden; }
+.navbar { z-index: 1100; background-color: rgba(0, 0, 0, 0.9) !important; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+.snap-container { height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; scroll-behavior: smooth; position: relative; }
+
+/* TimeLine */
+.timeline-container { position: fixed; top: 0; left: 0; width: 100px; height: 100vh; z-index: 1000; background: rgba(0, 0, 0, 0.6); border-right: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 60px; }
+.timeline-line { position: absolute; top: 0; bottom: 0; width: 4px; background: linear-gradient(to bottom, transparent, #00ffc8, transparent); opacity: 0.4; z-index: -1; }
+.timeline-dot { width: 25px; height: 25px; background-color: #222; border: 3px solid rgba(255, 255, 255, 0.3); border-radius: 50%; transition: 0.4s; cursor: pointer; }
+.timeline-dot.active { width: 40px; height: 40px; background-color: #00ffc8; border-color: #fff; box-shadow: 0 0 20px #00ffc8; }
+
+/* Secciones y Fondos */
+.tier-section { height: 100vh; width: 100%; scroll-snap-align: start; display: flex; align-items: center; justify-content: center; padding-left: 100px; background-size: cover; background-position: center; background-attachment: fixed; position: relative; }
+#tierScrap { background-image: linear-gradient(to bottom, #000 0%, transparent 30%, transparent 70%, #000 100%), url('../img/thecenter_bg.jpg'); }
+#tierMetal { background-image: linear-gradient(to bottom, #000 0%, transparent 30%, transparent 70%, #000 100%), url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2000'); }
+#tierAcero { background-image: linear-gradient(to bottom, #000 0%, transparent 30%, transparent 70%, #000 100%), url('https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?q=80&w=2000'); }
+#tierTitanio { background-image: linear-gradient(to bottom, #000 0%, transparent 30%, transparent 70%, #000 100%), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2000'); }
+
+/* Contenedor Principal */
+.tier-container {
+    width: 95%; max-width: 1600px; 
+    height: 100vh; /* Ocupamos toda la altura */
+    display: flex; flex-direction: column; 
+    padding-top: 80px; /* Espacio para que el título no choque con el navbar */
+    padding-bottom: 8%;
+    opacity: 1; transform: translateY(0);
+}
+
+/* --- Header --- */
+.tier-header { 
+    text-align: center; 
+    margin-bottom: 20px; 
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column-reverse; /* Badge on top of header */
+    align-items: center;
+    gap: 5px; /* min spc between badge nd title */
+}
+
+.tier-header h1 { 
+    text-shadow: 0 0 20px rgba(0,0,0,0.8); 
+    margin: 0; 
+    font-size: 3.5rem;
+    text-transform: uppercase; 
+    letter-spacing: 5px; 
+    line-height: 1;
+}
+
+.tier-header .badge {
+    font-size: 1rem;
+    padding: 0.5em 1em;
+    z-index: 10;
+}
+
+
+/* --- LAYOUT PRINCIPAL --- */
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex: 1; 
+    gap: 50px; 
+    
+    align-items: center; 
+    
+    justify-content: center;
+    overflow: hidden; 
+    padding-bottom: 20px;
+}
+
+/* 1. IZQUIERDA: DESCRIPCIÓN */
+.description-card {
+    flex: 0 0 40%; 
+    height: 100%;
+    
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-left: 8px solid #00ffc8; 
+    border-radius: 4px;
+    padding: 3rem;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+    overflow-y: auto; 
+}
+
+.description-card h4 { color: #00ffc8; text-transform: uppercase; font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+.description-card p { color: #e0e0e0; line-height: 1.8; font-size: 1.15rem; text-align: justify; }
+
+/* 2. DERECHA: CONTENEDOR DE COLUMNAS */
+.cards-grid {
+    flex: 0 1 auto;
+    display: flex; /* Usamos Flex Row para poner las dos columnas lado a lado */
+    flex-direction: row;
+    gap: 15px;
+    
+    align-items: center;
+    overflow-y: auto; 
+    overflow-x: hidden; /* ADIÓS SCROLL LATERAL */
+    padding-right: 5px;
+    max-height: 100%;
+}
+
+/* --- COLUMNAS INDEPENDIENTES --- */
+.grid-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: min-content; /* Se ajusta al ancho de las tarjetas */
+}
+
+/* Tarjeta Individual */
+.tier-card {
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 10px;
+    
+    width: min-content; 
+    min-width: 140px;
+    
+    display: flex; flex-direction: column; align-items: center;
+    transition: 0.3s;
+    height: auto; 
+}
+.tier-card:hover { border-color: #00ffc8; background: rgba(0, 0, 0, 0.9); transform: translateY(-3px); }
+
+.card-category-title { 
+    color: #fff; font-family: monospace; font-size: 0.9rem; font-weight: bold;
+    margin-bottom: 12px; width: 100%; text-align: center; border-bottom: 1px solid #00ffc8; padding-bottom: 5px;
+    white-space: nowrap; 
+}
+
+/* --- MINI INVENTARIO --- */
+.mini-inventory { 
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 8px;
+    width: 100%;
+    justify-items: center;
+}
+
+.mini-slot {
+    width: 70px; height: 70px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid #555; 
+    padding: 5px; position: relative;
+    display: flex; align-items: center; justify-content: center;
+}
+.mini-slot img { width: 100%; height: 100%; object-fit: contain; }
+.mini-slot:hover { border-color: #00ffc8; background: rgba(0, 255, 200, 0.1); transform: scale(1.1); z-index: 10; }
+.mini-slot:hover::after { content: attr(data-name); position: absolute; left: 110%; top: 50%; transform: translateY(-50%); background: black; color: white; font-size: 11px; padding: 4px 8px; border: 1px solid #00ffc8; white-space: nowrap; pointer-events: none; z-index: 100; }
+
+/* Animación */
+.tier-section.animate-in .tier-container { animation: fadeInUp 0.8s forwards; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+
+
+/* --- FONT AWESOME --- */
+.navbar-icons {
+    display: flex;
+    gap: 15px; 
+    margin-left: auto; 
+    align-items: center;
+}
+
+.nav-icon-link {
+    width: 40px; 
+    height: 40px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.5);
+    
+    color: white; 
+    text-decoration: none;
+    
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Ajuste del Ícono (La etiqueta <i>) */
+.nav-icon-link i {
+    font-size: 20px; /* Tamaño del icono */
+    transition: transform 0.3s ease;
+}
+
+/* --- EFECTO HOVER --- */
+.nav-icon-link:hover {
+    border-color: #00ffc8; 
+    color: #00ffc8;         /* Cambia el color del icono */
+    transform: scale(1.15); 
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.4); 
+    background: rgba(0, 255, 200, 0.1); 
+}
+
+/* Media Queries */
+
+@media (max-width: 992px) {
+    .timeline-container { display: none; }
+
+    .tier-section { 
+        padding-left: 0; 
+        padding-top: 80px; 
+        height: auto; 
+        min-height: 100vh;
+    }
+
+    .tier-container { 
+        height: auto; 
+        padding-top: 10px; 
+        width: 100%; 
+        max-width: 100%; 
+        padding-left: 20px; 
+        padding-right: 20px;
+    }
+
+
+    .tier-header h1 { font-size: 2.5rem; letter-spacing: 2px; }
+
+
+    .content-wrapper { 
+        flex-direction: column; 
+        height: auto; 
+        gap: 30px; 
+        align-items: center; 
+        overflow: visible;
+    }
+
+
+    .description-card { 
+        width: 100%; 
+        flex: auto; 
+        max-height: none; 
+        padding: 1.5rem;
+        
+        border-left: none; 
+        border-top: 4px solid #00ffc8;
+    }
+    .description-card h4 { font-size: 1.5rem; }
+    .description-card p { font-size: 1rem; }
+
+    .cards-grid { 
+        width: 100%; 
+        flex-direction: column;
+        gap: 20px;
+        padding-right: 0;
+        overflow: visible;
+        max-height: none;
+    }
+
+    .grid-column { 
+        width: 100%; 
+        gap: 15px;
+    }
+
+    .tier-card { 
+        width: 100%; 
+        min-width: 0;
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+    }
+    
+
+    .card-category-title {
+        width: auto;
+        border-bottom: none;
+        margin-bottom: 0;
+        text-align: left;
+        margin-right: 15px;
+        font-size: 1rem;
+    }
+
+    /* 10. Se muestra horizontal en fila */
+    .mini-inventory { 
+        grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); /* Auto-ajuste */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        justify-content: flex-end;
+        width: auto;
+    }
+
+    .mini-slot { 
+        width: 50px; 
+        height: 50px; 
+    }
+}
