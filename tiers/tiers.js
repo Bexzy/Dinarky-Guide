@@ -1,32 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Seleccionamos los elementos
+    // ==========================================
+    // 1. LOGICA DEL TIMELINE (Barra lateral)
+    // ==========================================
     const container = document.querySelector('.snap-container');
     const sections = document.querySelectorAll('.tier-section');
     const dots = document.querySelectorAll('.timeline-dot');
 
-    // 2. Función lógica para iluminar el punto correcto
     const highlightDot = () => {
         let activeId = null;
-
-        // Revisamos todas las secciones para ver cuál está "enfocada"
         sections.forEach(section => {
             const rect = section.getBoundingClientRect();
-
-            // Si la parte superior de la sección está en la zona "activa" de la pantalla
-            // (Entre -250px y 250px respecto al tope)
-            if (rect.top > -250 && rect.top < 250) {
+            // Detectar qué sección está en pantalla
+            if (rect.top > -300 && rect.top < 300) {
                 activeId = section.getAttribute('id');
-                
-                // Ya que estamos, activamos la animación de entrada
                 section.classList.add('animate-in');
             }
         });
 
-        // 3. Actualizamos la barra lateral (UNA SOLA VEZ para evitar parpadeos)
         if (activeId) {
             dots.forEach(dot => {
-                // Si el data-target coincide con el ID activo, ponemos 'active', si no, lo quitamos
                 if (dot.dataset.target === activeId) {
                     dot.classList.add('active');
                 } else {
@@ -36,26 +29,131 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // 4. Escuchar el evento de scroll en el contenedor principal
-    // (Usamos el contenedor .snap-container, no window, porque es el que tiene el scroll)
     if (container) {
         container.addEventListener('scroll', highlightDot);
+        highlightDot(); // Ejecutar al inicio
     }
 
-    // 5. Configurar los clics en los puntos para navegar
     dots.forEach(dot => {
         dot.addEventListener('click', () => {
             const targetId = dot.dataset.target;
             const targetSection = document.getElementById(targetId);
-            
             if (targetSection) {
                 targetSection.scrollIntoView({ behavior: 'smooth' });
-                // Pequeño truco: forzamos el chequeo después de 0.5s para asegurar que se ilumine al llegar
                 setTimeout(highlightDot, 500); 
             }
         });
     });
 
-    // 6. Ejecutar al inicio para iluminar el primer punto
-    highlightDot();
+    // ==========================================
+    // 2. NUEVA LOGICA: TOOLTIP RPG
+    // ==========================================
+    const tooltip = document.getElementById('item-tooltip');
+    
+    // Verificar que el tooltip existe antes de ejecutar
+    if (tooltip) {
+        const ttImg = document.getElementById('tt-img');
+        const ttTitle = document.getElementById('tt-title');
+        const ttDesc = document.getElementById('tt-desc');
+        const ttRecipeContainer = document.getElementById('tt-recipe-container');
+        const slots = document.querySelectorAll('.mini-slot');
+
+        slots.forEach(slot => {
+            // --- ENTRAR ---
+            slot.addEventListener('mouseenter', () => {
+                // Leer datos del HTML
+                const name = slot.dataset.name || 'Objeto';
+                const desc = slot.dataset.desc || 'Sin descripción.';
+                const recipeString = slot.dataset.recipe || '';
+                const armorVal = parseInt(slot.dataset.armor) || 0;
+                const duraVal = parseInt(slot.dataset.dura) || 0;
+                const dmgVal = parseInt(slot.dataset.dmg) || 0;
+                
+                const imgElement = slot.querySelector('img');
+                const mainImgSrc = imgElement ? imgElement.src : '';
+
+                // Llenar info
+                ttTitle.textContent = name;
+                ttDesc.textContent = desc;
+                ttImg.src = mainImgSrc;
+
+                // --- BARRAS DE PROGRESO --- // 
+                const MAX_ARMOR = 200; // Tope visual para armadura
+                const MAX_DURA = 500;  // Tope visual para durabilidad
+                const MAX_DMG = 300;  // Tope visual para daño
+
+                // Armadura
+                const armorRow = document.getElementById('row-armor');
+                if (armorVal > 0) {
+                    armorRow.style.display = 'flex';
+                    document.getElementById('tt-armor-val').textContent = armorVal;
+                    let pct = (armorVal / MAX_ARMOR) * 100;
+                    document.getElementById('tt-armor-bar').style.width = `${Math.min(pct, 100)}%`;
+                } else {
+                    armorRow.style.display = 'none';
+                }
+
+                // Durabilidad
+                const duraRow = document.getElementById('row-dura');
+                if (duraVal > 0) {
+                    duraRow.style.display = 'flex';
+                    document.getElementById('tt-dura-val').textContent = duraVal;
+                    let pct = (duraVal / MAX_DURA) * 100;
+                    document.getElementById('tt-dura-bar').style.width = `${Math.min(pct, 100)}%`;
+                } else {
+                    duraRow.style.display = 'none';
+                }
+
+                // Daño
+                const dmgRow = document.getElementById('row-dmg');
+                if (dmgVal > 0) {
+                    dmgRow.style.display = 'flex';
+                    document.getElementById('tt-dmg-val').textContent = dmgVal;
+                    let pct = (dmgVal / MAX_DMG) * 100;
+                    document.getElementById('tt-dmg-bar').style.width = `${Math.min(pct, 100)}%`;
+                } else {
+                    dmgRow.style.display = 'none';
+                }
+
+                // --- RECETA --- //
+                ttRecipeContainer.innerHTML = ''; 
+                if(recipeString) {
+                    const materials = recipeString.split(',');
+                    materials.forEach(matSrc => {
+                        if(matSrc.trim() !== "") {
+                            const img = document.createElement('img');
+                            img.src = matSrc.trim();
+                            ttRecipeContainer.appendChild(img);
+                        }
+                    });
+                } else {
+                    ttRecipeContainer.innerHTML = '<span style="color:#555; font-size:0.7rem;">NO CRAFTABLE</span>';
+                }
+
+                tooltip.style.opacity = '1';
+            });
+
+            // --- MOVER CON MOUSE --- //
+            slot.addEventListener('mousemove', (e) => {
+                let x = e.clientX + 20;
+                let y = e.clientY + 20;
+
+                const ttWidth = 280;
+                const ttHeight = tooltip.offsetHeight || 300;
+
+                // Ajuste de bordes
+                if (x + ttWidth > window.innerWidth) x = e.clientX - ttWidth - 10;
+                if (y + ttHeight > window.innerHeight) y = e.clientY - ttHeight - 10;
+                if (y < 0) y = 10;
+
+                tooltip.style.left = `${x}px`;
+                tooltip.style.top = `${y}px`;
+            });
+
+            // --- SALIR --- //
+            slot.addEventListener('mouseleave', () => {
+                tooltip.style.opacity = '0';
+            });
+        });
+    }
 });

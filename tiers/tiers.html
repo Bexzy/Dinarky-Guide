@@ -67,12 +67,13 @@
                     <div class="description-card">
                         <h4>Supervivencia</h4>
                         <p>
-                            El Tier Scrap existe por la necesidad de diferenciar al usuario que acaba de ingresar. 
-                            <br><br>
-                            Consiste en un equipamiento hecho con residuos de la antigua civilización y restos de criaturas. 
                             Todavía incapaz de procesar materiales como el Metal puro, generas herramientas y armas con lo que encuentras a mano.
+                            Es el punto de partida para toda historia.
                             <br><br>
-                            Es el punto de partida para todo superviviente, ideal para recolección básica y defensa personal.
+                            El Tier Scrap es una de las nuevas adiciones de la nueva temporada de Dinarky.
+                            Consiste en un equipamiento hecho con residuos de la antigua civilización y restos de criaturas. 
+                            <br><br>
+                            <i>«No pidas más, no tienes nadie que te respalde»</i>
                         </p>
                     </div>
 
@@ -83,17 +84,43 @@
                             <div class="tier-card">
                                 <div class="card-category-title">Armadura</div>
                                 <div class="mini-inventory">
-                                    <div class="mini-slot" data-name="Set Piel"><img src="../img/res-vanilla/armor_hide.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Set Piel"
+                                        data-armor="60"
+                                        data-dura="100"
+                                        data-desc="Un conjunto de armadura hecha con los restos de tus víctimas."
+                                        data-recipe="../img/res-vanilla/hide.webp,../img/res-vanilla/fibra.webp"
+                                    ><img src="../img/res-vanilla/armor_hide.webp"></div>
                                 </div>
                             </div>
 
                             <div class="tier-card">
                                 <div class="card-category-title">Armas</div>
                                 <div class="mini-inventory">
-                                    <div class="mini-slot" data-name="Espada de Scrap"><img src="../img/res-mod/weapon_scrap_sword.png"></div>
-                                    <div class="mini-slot" data-name="Bate de Scrap"><img src="../img/res-mod/weapon_scrap_bat.png"></div>
-                                    <div class="mini-slot" data-name="Antorcha"><img src="../img/res-vanilla/weapon_torch.webp"></div>
-                                    <div class="mini-slot" data-name="Arco"><img src="../img/res-vanilla/weapon_bow.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Espada de Scrap"
+                                        data-dmg="40"
+                                        data-desc="Dicen que un cuchillo sin afilar es más peligroso que uno afilado. Bueno, este da Tétano."
+                                        data-recipe="../img/res-vanilla/scrap.webp,../img/res-vanilla/madera.webp"
+                                    ><img src="../img/res-mod/weapon_scrap_sword.png"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Bate de Scrap"
+                                        data-dmg="35"
+                                        data-desc="Si no te duermes con un golpe de este bate, felicidades, ganaste un aneurisma cerebral."
+                                        data-recipe="../img/res-vanilla/scrap.webp,../img/res-vanilla/madera.webp"
+                                    ><img src="../img/res-mod/weapon_scrap_bat.png"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Antorcha"
+                                        data-dmg="15"
+                                        data-desc="Como en las olimpiadas!."
+                                        data-recipe="../img/res-vanilla/madera.webp,../img/res-vanilla/sulphur.webp"
+                                    ><img src="../img/res-vanilla/weapon_torch.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Arco"
+                                        data-dmg="55"
+                                        data-desc="Arco de madera, no se me ocurrió ningún chiste."
+                                        data-recipe="../img/res-vanilla/madera.webp,../img/res-vanilla/hide.webp"
+                                    ><img src="../img/res-vanilla/weapon_bow.webp"></div>
                                 </div>
                             </div>
                         </div>
@@ -102,17 +129,40 @@
                             <div class="tier-card">
                                 <div class="card-category-title">Herramientas</div>
                                 <div class="mini-inventory">
-                                    <div class="mini-slot" data-name="Pico de Scrap"><img src="../img/res-mod/tool_scrap_pickaxe.png"></div>
-                                    <div class="mini-slot" data-name="Hacha de Scrap"><img src="../img/res-mod/tool_scrap_axe.png"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Pico de Scrap"
+                                        data-dmg="25"
+                                        data-desc="Arte abstracto o Pico de Scrap? Tú decides."
+                                        data-recipe="../img/res-vanilla/scrap.webp,../img/res-vanilla/hide.webp"
+                                    ><img src="../img/res-mod/tool_scrap_pickaxe.png"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Hacha de Scrap"
+                                        data-dmg="30"
+                                        data-desc="Algo que asemeja ser un hacha formada con restos de la antigua civilización."
+                                        data-recipe="../img/res-vanilla/scrap.webp,../img/res-vanilla/hide.webp"
+                                    >
+                                        <img src="../img/res-mod/tool_scrap_axe.png"></div>
                                 </div>
                             </div>
 
                             <div class="tier-card">
                                 <div class="card-category-title">Equipamiento</div>
                                 <div class="mini-inventory">
-                                    <div class="mini-slot" data-name="Paracaídas"><img src="../img/res-vanilla/extra_parachute.webp"></div>
-                                    <div class="mini-slot" data-name="Boleadora"><img src="../img/res-vanilla/extra_bola.webp"></div>
-                                    <div class="mini-slot" data-name="Catalejo"><img src="../img/res-vanilla/extra_spyglass.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Paracaídas"
+                                        data-desc="Procura abrirlo ANTES de tocar el suelo."
+                                        data-recipe="../img/res-vanilla/hide.webp,../img/res-vanilla/fibra.webp"
+                                    ><img src="../img/res-vanilla/extra_parachute.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Boleadora"
+                                        data-desc="Stun garantizado, puntería se vende por separado."
+                                        data-recipe="../img/res-vanilla/hide.webp,../img/res-vanilla/fibra.webp"
+                                    ><img src="../img/res-vanilla/extra_bola.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Catalejo"
+                                        data-desc="Veo tierra! Ah no, espera, solo es una mancha en el catalejo."
+                                        data-recipe="../img/res-vanilla/madera.webp,../img/res-dinarky/procesados_placasilice.webp"
+                                    ><img src="../img/res-vanilla/extra_spyglass.webp"></div>
                                 </div>
                             </div>
                         </div>
@@ -135,9 +185,17 @@
                     <div class="description-card">
                         <h4>FUNDICIÓN</h4>
                         <p>
-                            El salto a la herrería marca el inicio de las facciones reales. Las armaduras de metal (Flak) ofrecen protección balística real.
+                            El salto a la herrería marca el inicio de las facciones reales. Ya formando parte de un grupo, 
+                            puedes permitirte mayores lujos, mejor quipamiento y algo que te garantice no morir esta noche. 
+                            <br>
+                            Mientras que armaduras de quitina ofrecen protección balística real el equipamiento de metal abre paso a nuevas oportunidades de "negocio".
                             <br><br>
                             Este tier introduce la pólvora y las armas de fuego de un solo tiro.
+                            <br>
+                            Así como herramientas de minería y tala que permiten la recolección de recursos más rápido y eficiente.
+                            Finalmente la armadura de quitina, ofrece una protección decente y es un gran paso adelante en comparación a la armadura de piel.
+                            <br><br>
+                            <i>«El metal es el primer paso para ser alguien en este mundo»</i>
                         </p>
                     </div>
 
@@ -147,18 +205,55 @@
                             <div class="tier-card">
                                 <div class="card-category-title">Armadura</div>
                                 <div class="mini-inventory">
-                                    <div class="mini-slot" data-name="Set Chitin"><img src="../img/res-vanilla/armor_chitin.webp"></div>
+                                    <div class="mini-slot" 
+                                    data-name="Set Chitin"
+                                    data-armor="100"
+                                    data-dura="200"
+                                    data-desc="Armadura formada a base de quitina, metal, y sobretodo, esfuerzo."
+                                    data-recipe="../img/res-vanilla/chitinorqueratin.webp,../img/res-vanilla/lingote_metal.webp,../img/res-vanilla/sap.webp"
+                                    >
+                                        <img src="../img/res-vanilla/armor_chitin.webp"></div>
                                 </div>
                             </div>
 
                             <div class="tier-card">
                                 <div class="card-category-title">Armas</div>
                                 <div class="mini-inventory">
-                                    <div class="mini-slot" data-name="Lanza de Metal"><img src="../img/res-vanilla/weapon_metal_spear.webp"></div>
-                                    <div class="mini-slot" data-name="Espada de Metal"><img src="../img/res-vanilla/weapon_metal_sword.webp"></div>
-                                    <div class="mini-slot" data-name="Ballesta"><img src="../img/res-vanilla/weapon_crossbow.webp"></div>
-                                    <div class="mini-slot" data-name="Escopeta Primitiva"><img src="../img/res-vanilla/weapon_prim_shotgun.webp"></div>
-                                    <div class="mini-slot" data-name="Revolver"><img src="../img/res-vanilla/weapon_revolver.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Lanza de Metal"
+                                        data-dmg="40"
+                                        data-desc="Contrario a la creencia popular, no se puede lanzar."
+                                        data-recipe="../img/res-vanilla/lingote_metal.webp,../img/res-vanilla/madera.webp"
+                                    >
+                                        <img src="../img/res-vanilla/weapon_metal_spear.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Espada de Metal"
+                                        data-dmg="90"
+                                        data-desc="Cuidado, corta!."
+                                        data-recipe="../img/res-vanilla/lingote_metal.webp,../img/res-vanilla/madera.webp"
+                                    >
+                                        <img src="../img/res-vanilla/weapon_metal_sword.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Ballesta"
+                                        data-dmg="95"
+                                        data-desc="Arco táctico, o algo así."
+                                        data-recipe="../img/res-vanilla/lingote_metal.webp,../img/res-vanilla/madera.webp"
+                                    >
+                                        <img src="../img/res-vanilla/weapon_crossbow.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Escopeta Primitiva"
+                                        data-dmg="640"
+                                        data-desc="Recortada, como su capacidad de munición."
+                                        data-recipe="../img/res-vanilla/lingote_metal.webp,../img/res-vanilla/madera.webp"
+                                    >
+                                        <img src="../img/res-vanilla/weapon_prim_shotgun.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Revolver"
+                                        data-dmg="100"
+                                        data-desc="Como en el viejo oeste... Espera, época incorrecta."
+                                        data-recipe="../img/res-vanilla/lingote_metal.webp,../img/res-vanilla/madera.webp"
+                                    >
+                                        <img src="../img/res-vanilla/weapon_revolver.webp"></div>
                                 </div>
                             </div>
                         </div>
@@ -167,16 +262,39 @@
                             <div class="tier-card">
                                 <div class="card-category-title">Herramientas</div>
                                 <div class="mini-inventory">
-                                    <div class="mini-slot" data-name="Pico de Metal"><img src="../img/res-vanilla/tool_metal_pick.webp"></div>
-                                    <div class="mini-slot" data-name="Hacha de Metal"><img src="../img/res-vanilla/tool_metal_axe.webp"></div>
-                                    <div class="mini-slot" data-name="Hoz de Metal"><img src="../img/res-vanilla/tool_metal_scyte.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Pico de Metal"
+                                        data-dmg="32"
+                                        data-desc="As a child, I yearned for the mines."
+                                        data-recipe="../img/res-vanilla/lingote_metal.webp,../img/res-vanilla/madera.webp"
+                                    >
+                                        <img src="../img/res-vanilla/tool_metal_pick.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Hacha de Metal"
+                                        data-dmg="40"
+                                        data-desc="Casi pareces un vikingo con ella."
+                                        data-recipe="../img/res-vanilla/lingote_metal.webp,../img/res-vanilla/madera.webp"
+                                    >
+                                        <img src="../img/res-vanilla/tool_metal_axe.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Hoz de Metal"
+                                        data-dmg="50"
+                                        data-desc="Es una hoz, no una garfio ￣へ￣"
+                                        data-recipe="../img/res-vanilla/lingote_metal.webp,../img/res-vanilla/madera.webp"
+                                    >
+                                        <img src="../img/res-vanilla/tool_metal_scyte.webp"></div>
                                 </div>
                             </div>
 
                             <div class="tier-card">
                                 <div class="card-category-title">Equipamiento</div>
                                 <div class="mini-inventory">
-                                    <div class="mini-slot" data-name="Mira"><img src="../img/res-vanilla/extra_scope.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Mira"
+                                        data-desc="Una mira de precisión para armas de fuego."
+                                        data-recipe="../img/res-vanilla/lingote_metal.webp,../img/res-dinarky/vidrio_soplado.png"
+                                    >
+                                        <img src="../img/res-vanilla/extra_scope.webp"></div>
                                 </div>
                             </div>
                         </div>
@@ -198,8 +316,14 @@
                     <div class="description-card">
                         <h4>INDUSTRIALIZACIÓN</h4>
                         <p>
-                            El acero y los polímeros avanzados permiten la creación de armamento militar moderno. 
-                            La armadura antidisturbios (Riot) ofrece la mejor protección física.
+                            Tras completar hitos junto a tu facción, finalmente desbloqueas el acceso al siguiente nivel de tecnología, el acero.
+                            Las aleaciones de acero y la introducción de compuestos más avanzados marcan un antes y un después en la evolución del equipamiento.Vw
+                            <br><br>
+                            La obtención del acero representa un gran avance tecnológico. 
+                            Con el acero, los habitantes de tu reino pueden crear armaduras más resistentes y duraderas, así como herramientas más eficientes para la recolección de recursos.
+                            Pero la cereza del pastel es la introducción de armas de fuego automáticas, que ofrecen una potencia de fuego sin precedentes y cambian radicalmente el balance en el combate.
+                            <br><br>
+                            <i>«Tu arma hace música, y el enemigo pide una canción»</i>
                         </p>
                     </div>
 
@@ -208,16 +332,47 @@
                             <div class="tier-card">
                                 <div class="card-category-title">Armadura</div>
                                 <div class="mini-inventory">
-                                    <div class="mini-slot" data-name="Set Metal"><img src="../img/res-vanilla/armor_metal.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Set Metal"
+                                        data-armor="150"
+                                        data-dura="250"
+                                        data-desc="Un conjunto de armadura de acero resistente."
+                                        data-recipe="../img/res-dinarky/lingote_acero.png,../img/res-dinarky/cuero_cuerocurtido.png"
+                                    >
+                                        <img src="../img/res-vanilla/armor_metal.webp"></div>
                                 </div>
                             </div>
                             <div class="tier-card">
                                 <div class="card-category-title">Armas</div>
                                 <div class="mini-inventory">
-                                    <div class="mini-slot" data-name="Rifle Prim"><img src="../img/res-vanilla/weapon_prim_rifle.webp"></div>
-                                    <div class="mini-slot" data-name="Pistola Fab"><img src="../img/res-vanilla/weapon_fab_pistol.webp"></div>
-                                    <div class="mini-slot" data-name="Lanza Arpones"><img src="../img/res-vanilla/weapon_arpoon.webp"></div>
-                                    <div class="mini-slot" data-name="Rifle de Asalto"><img src="../img/res-vanilla/weapon_assault_rifle.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Rifle Primitivo"
+                                        data-dmg="280"
+                                        data-desc="Ya tienes el rifle, solo te falta la puntería."
+                                        data-recipe="../img/res-dinarky/herrajes_acero.png,../img/res-dinarky/lingote_acero.png,../img/res-dinarky/procesados_caucho.png"
+                                    >
+                                        <img src="../img/res-vanilla/weapon_prim_rifle.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Pistola Fabricada"
+                                        data-dmg="50"
+                                        data-desc="Una pistola para gobernarlas a todas."
+                                        data-recipe="../img/res-dinarky/herrajes_acero.png,../img/res-dinarky/lingote_acero.png,../img/res-dinarky/procesados_caucho.png"
+                                    >
+                                        <img src="../img/res-vanilla/weapon_fab_pistol.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Lanza Arpones"
+                                        data-dmg="140"
+                                        data-desc="Moby, ahí te voy."
+                                        data-recipe="../img/res-dinarky/herrajes_acero.png,../img/res-dinarky/lingote_acero.png,../img/res-dinarky/telas_telaregular.png"
+                                    >
+                                        <img src="../img/res-vanilla/weapon_arpoon.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Rifle de Asalto"
+                                        data-dmg="47"
+                                        data-desc="Perfecto para interrumpir una boda."
+                                        data-recipe="../img/res-dinarky/herrajes_acero.png,../img/res-dinarky/procesados_caucho.png,../img/res-dinarky/adhesivo_resinoso.png"
+                                    >
+                                        <img src="../img/res-vanilla/weapon_assault_rifle.webp"></div>
                                 </div>
                             </div>
                         </div>
@@ -226,7 +381,13 @@
                             <div class="tier-card">
                                 <div class="card-category-title">Herramientas</div>
                                 <div class="mini-inventory">
-                                    <div class="mini-slot" data-name="Motosierra"><img src="../img/res-vanilla/tool_chainsaw.webp"></div>
+                                    <div class="mini-slot" 
+                                        data-name="Motosierra"
+                                        data-dmg="16"
+                                        data-desc="Es una sierra, con un motor."
+                                        data-recipe="../img/res-dinarky/herrajes_acero.png,../img/res-dinarky/lingote_acero.png,../img/res-dinarky/procesados_caucho.png"
+                                    >
+                                        <img src="../img/res-vanilla/tool_chainsaw.webp"></div>
                                 </div>
                             </div>
                         </div>
@@ -247,29 +408,62 @@
                     <div class="description-card">
                         <h4>TECNOLOGÍA AVANZADA</h4>
                         <p>
-                            La cúspide de la evolución humana en el ARKA. Equipamiento potenciado por Elemento y aleaciones de Titanio.
+                            La cúspide de la evolución humana a las manos de tu civilización. 
+                            Equipamiento forjado por los mejores herreros de tu nación listo y preparado para afrontar hasta el peor de los infiernos.
+                            <br><br>
+                            Bienvenido al máximo nivel armamentistico. La durabilidad del titanio te permite llegar más allá de lo que nunca imaginaste,
+                            forjando armas con una precisión milimetrica, la potencia de un cañón en las palmas de tu mano y una armadura capaz de aguantar
+                            no solo balas, sino hasta las mandíbulas de la bestia más temida.
+                            <br><br>
+                            <i>«No estoy encerrado en esta armadura para protegerme de vosotros; vosotros estáis encerrados fuera para protegeros de mí»</i>
                         </p>
                     </div>
 
                     <div class="cards-grid">
                         <div class="grid-column">
+
                             <div class="tier-card">
                                 <div class="card-category-title">Armadura</div>
-                                <div class="mini-inventory">
-                                    <div class="mini-slot" data-name="Set Riot"><img src="../img/res-vanilla/armor_riot.webp"></div>
+                                    <div class="mini-inventory">
+                                        <div class="mini-slot" 
+                                            data-name="Set Riot" 
+                                            data-armor="200"
+                                            data-dura="500"
+                                            data-desc="Tecnología punta contra balística y e impactos físicos."
+                                            data-recipe="../img/res-dinarky/lingote_titanio.png,../img/res-dinarky/cuero_cueronoble.png,../img/res-dinarky/procesados_kevlar.png"
+                                        >
+                                            <img src="../img/res-vanilla/armor_riot.webp"></div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="tier-card">
-                                <div class="card-category-title">Armas</div>
-                                <div class="mini-inventory">
-                                    <div class="mini-slot" data-name="Escopeta Pump"><img src="../img/res-vanilla/weapon_pump_shotgun.webp"></div>
-                                    <div class="mini-slot" data-name="Arco Comp"><img src="../img/res-vanilla/weapon_comp_bow.webp"></div>
-                                    <div class="mini-slot" data-name="Rifle Fab"><img src="../img/res-vanilla/weapon_fab_rifle.webp"></div>
+                                <div class="tier-card">
+                                    <div class="card-category-title">Armas</div>
+                                        <div class="mini-inventory">
+                                            <div class="mini-slot" 
+                                                data-name="Escopeta Pump"
+                                                data-dmg="644"
+                                                data-desc="Pesticida a base de pólvora."
+                                                data-recipe="../img/res-dinarky/herrajes_titanio.png,../img/res-dinarky/procesados_caucho.png,../img/res-dinarky/adhesivo_resinoso.png"
+                                            >
+                                                <img src="../img/res-vanilla/weapon_pump_shotgun.webp"></div>
+                                            <div class="mini-slot" 
+                                                data-name="Arco Compuesto"
+                                                data-dmg="175"
+                                                data-desc="Arco compuesto, enemigo descompuesto."
+                                                data-recipe="../img/res-dinarky/herrajes_titanio.png,../img/res-dinarky/procesados_caucho.png,../img/res-dinarky/adhesivo_resinoso.png"
+                                            >
+                                                <img src="../img/res-vanilla/weapon_comp_bow.webp"></div>
+                                            <div class="mini-slot" 
+                                                data-name="Rifle Fabricado"
+                                                data-dmg="165"
+                                                data-desc="Hay que ser poco hombre para usar esto..."
+                                                data-recipe="../img/res-dinarky/herrajes_titanio.png,../img/res-dinarky/procesados_caucho.png,../img/res-dinarky/adhesivo_resinoso.png"
+                                            >
+                                                <img src="../img/res-vanilla/weapon_fab_rifle.webp"></div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
                         
-                        <div class="grid-column">
+                            <div class="grid-column">
                             </div>
                     </div>
                 </div>
@@ -278,6 +472,52 @@
 
     </main>
 
+    <div id="item-tooltip" class="custom-tooltip">
+        <div class="tooltip-header">
+            <img id="tt-img" src="" alt="">
+            <h5 id="tt-title">Objeto</h5>
+        </div>
+        <div class="tooltip-body">
+            <div class="stats-container">
+                <div class="stat-row" id="row-armor">
+                    <div class="stat-label">
+                        <span>🛡️ Armadura</span>
+                        <span id="tt-armor-val" class="val-text">0</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div id="tt-armor-bar" class="progress-fill"></div>
+                    </div>
+                </div>
+                <div class="stat-row" id="row-dura">
+                    <div class="stat-label">
+                        <span>🔧 Durabilidad</span>
+                        <span id="tt-dura-val" class="val-text">0</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div id="tt-dura-bar" class="progress-fill"></div>
+                    </div>
+                </div>
+                <div class="stat-row" id="row-dmg">
+                    <div class="stat-label">
+                        <span>⚔️ Daño</span>
+                        <span id="tt-dmg-val" class="val-text">0</span>
+                    </div>
+                    <div class="progress-bg">
+                        <div id="tt-dmg-bar" class="progress-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <p id="tt-desc">Descripción...</p>
+            
+            <div class="tt-recipe">
+                <small>Receta:</small>
+                <div class="recipe-icons" id="tt-recipe-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="tiers.js"></script>
 </body>
 </html>

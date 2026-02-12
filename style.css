@@ -122,3 +122,12 @@ body {
     box-shadow: 0 0 15px rgba(0, 255, 200, 0.4); 
     background: rgba(0, 255, 200, 0.1); 
 }
+
+@media (max-width: 992px) {
+    .navbar-icons {
+        justify-content: center; /* Centrar iconos al abrir menú */
+        margin-top: 20px;       /* Separarlos un poco del texto */
+        width: 100%;            /* Que ocupen todo el ancho */
+        
+    }
+}

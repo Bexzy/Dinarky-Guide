@@ -73,18 +73,18 @@ html, body { height: 100%; background-color: #000; color: white; font-family: sy
     flex: 0 0 40%; 
     height: 100%;
     
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-left: 8px solid #00ffc8; 
     border-radius: 4px;
     padding: 3rem;
     box-shadow: 0 10px 40px rgba(0,0,0,0.6);
-    overflow-y: auto; 
+    overflow-y: auto;
 }
 
 .description-card h4 { color: #00ffc8; text-transform: uppercase; font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
-.description-card p { color: #e0e0e0; line-height: 1.8; font-size: 1.15rem; text-align: justify; }
+.description-card p { color: #e0e0e0; line-height: 1.5; font-size: 1.15rem; text-align: justify; }
 
 /* 2. DERECHA: CONTENEDOR DE COLUMNAS */
 .cards-grid {
@@ -289,4 +289,119 @@ html, body { height: 100%; background-color: #000; color: white; font-family: sy
         width: 50px; 
         height: 50px; 
     }
+
+    .navbar-icons {
+    justify-content: center; /* Centrar iconos al abrir menú */
+    margin-top: 20px;       /* Separarlos un poco del texto */
+    width: 100%;            /* Que ocupen todo el ancho */
+    }
 }
+
+/* Contenedor de las barras */
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.stat-row {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Texto encima de la barra (Ej: Armadura 1100) */
+.stat-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: #ccc;
+    font-weight: 600;
+}
+.val-text { color: #fff; }
+
+/* Fondo de la barra (Gris oscuro) */
+.progress-bg {
+    width: 100%;
+    height: 6px; /* Altura de la barrita */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden; /* Para que el relleno no se salga */
+}
+
+/* EL RELLENO CON DEGRADADO */
+.progress-fill {
+    height: 100%;
+    width: 0%; /* JS lo cambiará */
+    border-radius: 3px;
+    transition: width 0.4s ease-out; /* Animación suave al llenarse */
+    
+    /* EL DEGRADADO QUE PEDISTE: */
+    /* Rojo Oscuro -> Rojo -> Naranja -> Amarillo -> Lima -> Verde Oscuro -> Azul -> Morado */
+    background: linear-gradient(90deg, 
+        #4a0000 0%,   /* Rojo Oscuro */
+        #ff0000 20%,  /* Rojo */
+        #ffa500 35%,  /* Naranja */
+        #ffff00 50%,  /* Amarillo */
+        #00ff00 65%,  /* Lima */
+        #006400 75%,  /* Verde Oscuro */
+        #0000ff 85%,  /* Azul */
+        #800080 100%  /* Morado */
+    );
+}
+
+/* --- ARREGLO MENÚ MÓVIL --- */
+@media (max-width: 992px) {
+    .navbar-icons {
+        justify-content: center;
+        margin-top: 15px;
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+/* --- ESTILO DEL TOOLTIP FLOTANTE --- */
+.custom-tooltip {
+    position: fixed; top: 0; left: 0; width: 280px;
+    background: rgba(15, 15, 20, 0.98); backdrop-filter: blur(10px);
+    border: 1px solid #00ffc8; border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,1); z-index: 9999; 
+    pointer-events: none; opacity: 0; 
+    transition: opacity 0.1s;
+    display: flex; flex-direction: column;
+}
+
+.tooltip-header {
+    background: linear-gradient(90deg, rgba(0,255,200,0.15), transparent);
+    padding: 12px; display: flex; align-items: center; gap: 12px; 
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.tooltip-header img { width: 40px; height: 40px; object-fit: contain; }
+.tooltip-header h5 { margin: 0; color: #00ffc8; font-size: 1rem; text-transform: uppercase; font-weight: bold; }
+
+.tooltip-body { padding: 12px; }
+.tooltip-body p { color: #ccc; font-size: 0.85rem; margin: 10px 0; line-height: 1.4; }
+
+/* BARRAS DE PROGRESO (ARCOÍRIS) */
+.stats-container { display: flex; flex-direction: column; gap: 8px; }
+.stat-row { display: flex; flex-direction: column; gap: 2px; }
+.stat-label { display: flex; justify-content: space-between; font-size: 0.75rem; color: #aaa; font-weight: 700; text-transform: uppercase; }
+.val-text { color: #fff; }
+.progress-bg { width: 100%; height: 6px; background: rgba(255,255,255,0.1); border-radius: 3px; overflow: hidden; }
+
+/* DEGRADADO DE COLORES */
+.progress-fill {
+    height: 100%; width: 0%; border-radius: 3px; transition: width 0.3s ease-out;
+    background: linear-gradient(90deg, 
+        #8B0000 0%, #ff0000 15%, #ffa500 30%, #ffff00 45%, #00ff00 60%, #006400 75%, #0000ff 90%, #800080 100%
+    );
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+.tt-recipe small { color: #00ffc8; display: block; margin-bottom: 4px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; }
+.recipe-icons { display: flex; gap: 5px; flex-wrap: wrap; }
+.recipe-icons img { width: 30px; height: 30px; background: rgba(0,0,0,0.5); border: 1px solid #555; padding: 3px; border-radius: 4px; }
+
+/* Ocultar tooltips viejos si quedan */
+.mini-slot:hover::after { display: none !important; }
