@@ -1,0 +1,242 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    background-color: #000;
+    color: white; 
+    font-family: system-ui, -apple-system, sans-serif; 
+    overflow: hidden; /* Evitar scroll mientras no se expanda contenido */
+}
+
+/* Navbar */
+.navbar { background-color: rgba(0, 0, 0, 0.9) !important; border: none; z-index: 1000; }
+.navbar-icons { display: flex; gap: 15px; align-items: center; }
+.nav-icon-link { width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(255, 255, 255, 0.2); border-radius: 8px; background: rgba(0, 0, 0, 0.5); color: white; text-decoration: none; transition: all 0.3s ease; }
+.nav-icon-link:hover { border-color: #00ffc8; color: #00ffc8; transform: scale(1.15); box-shadow: 0 0 15px rgba(0, 255, 200, 0.4); background: rgba(0, 255, 200, 0.1); }
+
+/* --- main container --- */
+.split-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 0;
+}
+
+/* --- main container cols --- */
+.split-section {
+    flex: 1; 
+    position: relative;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1); 
+    overflow: hidden;
+    cursor: pointer;
+    border-right: 1px solid rgba(255,255,255,0.1);
+    
+    padding-top: 70px; 
+    
+    background-size: cover;
+    background-position: center;
+}
+
+#sec-metal { 
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/tiermetal_bg.jpg'); 
+}
+#sec-acero { 
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/tieracero_bg.jpg'); 
+}
+#sec-titanio { 
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../img/tiertitanio_bg.jpg'); 
+    border-right: none;
+}
+
+.split-section:not(.active):hover {
+    flex: 1.5; /* Se agranda un poquito al pasar el mouse */
+    filter: brightness(1.2);
+}
+
+.split-section.active {
+    flex: 50; /* Ocupa casi todo el espacio */
+    cursor: default;
+    background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('../img/background.jpg'); /* Fondo más oscuro al abrir */
+}
+
+.split-container.has-active .split-section:not(.active) {
+    flex: 0;
+    border: none;
+}
+
+/* --- TEXTO DE PORTADA --- */
+.section-cover {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+    transition: opacity 0.3s;
+}
+.section-cover h2 { font-size: 2.5rem; text-transform: uppercase; letter-spacing: 3px; text-shadow: 0 0 20px black; }
+.section-cover span { font-size: 0.9rem; color: #00ffc8; opacity: 0; transform: translateY(10px); transition: 0.3s; }
+
+.split-section:hover .section-cover span { opacity: 1; transform: translateY(0); }
+
+.split-section.active .section-cover { opacity: 0; pointer-events: none; }
+
+
+.section-content {
+    opacity: 0;
+    pointer-events: none;
+    padding: 40px;
+    padding-top: 20px; 
+    
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: opacity 0.5s 0.3s; 
+}
+
+.split-section.active .section-content {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.btn-close-section {
+    position: absolute;
+    
+    top: 70px; 
+    
+    right: 30px;
+    background: transparent;
+    border: 1px solid #00ffc8;
+    color: #00ffc8;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 10;
+}
+.btn-close-section:hover { background: #00ffc8; color: black; }
+
+/* Grid Interno: Izquierda (Info) / Derecha (Mapa) */
+.content-row {
+    display: flex;
+    height: 100%;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.col-info { flex: 1; overflow-y: auto; padding-right: 20px; }
+.col-map { flex: 1; display: flex; flex-direction: column; }
+
+/* Estilos de Texto */
+.col-info h1 { color: #00ffc8; margin-bottom: 20px; font-size: 3rem; text-transform: uppercase; }
+.description { font-size: 1.2rem; color: #ccc; line-height: 1.6; margin-bottom: 40px; border-left: 4px solid #00ffc8; padding-left: 20px; }
+
+/* Recetas */
+.recipes-area h4 { color: white; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 15px; }
+.recipe-item { display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,0.05); padding: 10px; border-radius: 8px; margin-bottom: 10px; }
+.recipe-imgs { display: flex; align-items: center; gap: 10px; }
+.recipe-imgs img { width: 40px; height: 40px; object-fit: contain; }
+
+/* Mapa */
+.col-map h4 { text-align: center; margin-bottom: 15px; color: #00ffc8; }
+.map-frame {
+    flex: 1;
+    border: 2px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    background: black;
+    position: relative;
+}
+.map-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* --- MediaQueries --- */
+@media (max-width: 992px) {
+    .split-container { flex-direction: column; overflow-y: auto; }
+    .split-section { min-height: 33vh; border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .split-section.active { min-height: 100vh; flex: none; }
+    
+    .content-row { flex-direction: column; }
+    .col-map { height: 300px; flex: none; }
+}
+
+/* --- MAPA INTERACTIVO --- */
+.col-map { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+
+    align-items: center; 
+    justify-content: center;
+    height: 100%; 
+    padding-bottom: 20px;
+}
+
+.col-map h4 {
+    margin-bottom: 15px;
+    color: #00ffc8;
+    text-align: center;
+}
+
+.map-wrapper {
+    position: relative;
+    
+    /*flex:1 -> fit-content */
+    width: fit-content;      
+    height: fit-content;     
+    max-width: 100%;         
+    max-height: 60vh;        /*60% */
+    
+    border: 2px solid #00ffc8;
+    border-radius: 8px;
+    background: #000;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* El marco interno */
+.map-frame {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    cursor: grab;
+}
+.map-frame:active { cursor: grabbing; }
+
+/* La Imagen */
+.panzoom-img {
+    display: block;
+    max-width: 100%;         
+    max-height: 60vh;        
+    object-fit: contain;
+}
+
+/* Controles de Zoom */
+.map-controls {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 100;
+}
+
+.btn-zoom {
+    width: 35px; height: 35px;
+    border-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex; align-items: center; justify-content: center;
+}
+.btn-zoom:hover {
+    background: #00ffc8;
+    color: black;
+    border-color: #00ffc8;
+}

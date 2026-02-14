@@ -7,7 +7,7 @@
 
 body {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                url('img/thecenter_bg.jpg') no-repeat center center fixed;
+                url('img/thecenter_bg.png') no-repeat center center fixed;
     background-size: cover;
     color: white;
     font-family: system-ui, -apple-system, sans-serif;

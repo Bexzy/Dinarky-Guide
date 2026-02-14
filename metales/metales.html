@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinarky - Guía de Metales</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="metales.css">
+    <link rel="icon" type="image/image" href="../img/favicon.png">
+</head>
+<body class="bg-dark text-light">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="https://dinarky.netlify.app">
+                Logo Dinarky
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <div class="navbar-icons ms-auto">
+                    <a class="navbar-text link-primary text-decoration-none" href="../index.html">
+                        <i class="fa-solid fa-reply"></i>&nbsp;Volver
+                    </a>
+                    <a href="https://www.tiktok.com/@dinarkyrp" class="nav-icon-link" target="_blank"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://discord.gg/jSgppTzzQH" class="nav-icon-link" target="_blank"><i class="fa-brands fa-discord"></i></a>
+                    <a href="https://www.instagram.com/dinarkyoficial" class="nav-icon-link" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="split-container">
+
+        <div class="split-section" id="sec-metal">
+            <div class="section-cover">
+                <h2>Metal</h2>
+                <span>Click para expandir</span>
+            </div>
+
+            <div class="section-content">
+                <button class="btn-close-section"><i class="fa-solid fa-xmark"></i> Cerrar</button>
+                
+                <div class="content-row">
+                    <div class="col-info">
+                        <h1>Metal</h1>
+                        <p class="description">
+                            <i>«El eco del martillo sobre el yunque marca el inicio de una nueva era. 
+                            Descubre cómo procesar la chatarra y los minerales para obtener los lingotes que sostendrán el peso de tu legado.»</i>
+                            <br><br>
+                            Domina la forja para alcanzar el siguiente nivel de protección. Sin metal no hay progreso; 
+                            explora los diferentes y nuevos crafteos que trae el servidor de Dinarky y averigua donde aparece este recuerso en el mapa interactivo.
+                        </p>
+
+                        <div class="recipes-area">
+                            <h4>Recetas Comunes</h4>
+                            <div class="recipe-item">
+                                <span>Lingote de Metal</span>
+                                <div class="recipe-imgs">
+                                    <img src="../img/res-vanilla/ore_metal.png">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                    <i class="fa-solid fa-fire" style="color: #ff5500;"></i>
+                                    <img src="../img/res-dinarky/forja_t1.webp">
+                                    <i class="fa-solid fa-caret-right" style="color: white;"></i>
+                                    <img src="../img/res-vanilla/lingote_metal.webp">
+                                </div>
+                            </div>
+                            <div class="recipe-item">
+                                <span>Herrajes de Hierro</span>
+                                <div class="recipe-imgs">
+                                    <img src="../img/res-vanilla/lingote_metal.webp">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                    <i class="fa-solid fa-hammer" style="color: gray;"></i>
+                                    <img src="../img/res-dinarky/mesa_metalurgia_t1.webp">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                    <img src="../img/res-dinarky/herrajes_hierro.png">
+                                </div>
+                            </div>
+                                <div class="recipe-item">
+                                    <span>Herrajes de Hierro</span>
+                                    <div class="recipe-imgs">
+                                        <img src="../img/res-vanilla/lingote_metal.webp">
+                                        <i class="fa-solid fa-caret-right" style="color: white;"></i>
+                                        <i class="fa-solid fa-hammer" style="color: gray;"></i>
+                                        <img src="../img/res-dinarky/mesa_metalurgia_t1.webp">
+                                        <i class="fa-solid fa-caret-right"></i>
+                                        <img src="../img/res-dinarky/herrajes_hierro.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-map">
+                            <h4>Ubicación en el Mapa</h4>
+                            
+                            <div class="map-wrapper">
+                                <div class="map-controls">
+                                    <button class="btn-zoom" onclick="zoomIn(this)"><i class="fa-solid fa-plus"></i></button>
+                                    <button class="btn-zoom" onclick="zoomOut(this)"><i class="fa-solid fa-minus"></i></button>
+                                    <button class="btn-zoom" onclick="resetZoom(this)"><i class="fa-solid fa-compress"></i></button>
+                                </div>
+
+                                <div class="map-frame" id="map-frame-scrap">
+                                    <img class="panzoom-img" src="../img/map_thecenter.webp" alt="Mapa">
+                                </div>
+                            </div>
+                            <small class="text-muted mt-2 text-center d-block">Usa el mouse para arrastrar y la rueda para zoom.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <div class="split-section" id="sec-acero">
+            <div class="section-cover">
+                <h2>Acero</h2>
+                <span>Click para expandir</span>
+            </div>
+            <div class="section-content">
+                <button class="btn-close-section"><i class="fa-solid fa-xmark"></i> Cerrar</button>
+                <div class="content-row">
+                    <div class="col-info">
+                        <h1>Acero</h1>
+                        <p class="description">
+                            Texto de ejemplo
+                        </p>
+
+                        <div class="recipes-area">
+                            <h4>Recetas Comunes</h4>
+                            <div class="recipe-item">
+                                <span>Lingote de Metal</span>
+                                <div class="recipe-imgs">
+                                    <img src="../img/res-vanilla/ore_metal.png">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                    <i class="fa-solid fa-fire" style="color: #ff5500;"></i>
+                                    <img src="../img/res-dinarky/forja_t1.webp">
+                                    <i class="fa-solid fa-caret-right" style="color: white;"></i>
+                                    <img src="../img/res-vanilla/lingote_metal.webp">
+                                </div>
+                            </div>
+                            <div class="recipe-item">
+                                <span>Herrajes de Acero</span>
+                                <div class="recipe-imgs">
+                                    <img src="../img/res-dinarky/lingote_acero.png">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                    <i class="fa-solid fa-hammer" style="color: gray;"></i>
+                                    <img src="../img/res-dinarky/mesa_metalurgia_t2.webp">
+                                    <i class="fa-solid fa-caret-right"></i>
+                                    <img src="../img/res-dinarky/herrajes_acero.png">
+                                </div>
+                            </div>
+                                <div class="recipe-item">
+                                    <span>Herrajes de Hierro</span>
+                                    <div class="recipe-imgs">
+                                        <img src="../img/res-vanilla/lingote_metal.webp">
+                                        <i class="fa-solid fa-caret-right" style="color: white;"></i>
+                                        <i class="fa-solid fa-hammer" style="color: gray;"></i>
+                                        <img src="../img/res-dinarky/mesa_metalurgia_t1.webp">
+                                        <i class="fa-solid fa-caret-right"></i>
+                                        <img src="../img/res-dinarky/herrajes_hierro.png">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-map">
+                        <h4>Ubicación en el Mapa</h4>
+                        
+                        <div class="map-wrapper">
+                            <div class="map-controls">
+                                <button class="btn-zoom" onclick="zoomIn(this)"><i class="fa-solid fa-plus"></i></button>
+                                <button class="btn-zoom" onclick="zoomOut(this)"><i class="fa-solid fa-minus"></i></button>
+                                <button class="btn-zoom" onclick="resetZoom(this)"><i class="fa-solid fa-compress"></i></button>
+                            </div>
+
+                            <div class="map-frame" id="map-frame-scrap">
+                                <img class="panzoom-img" src="../img/map_thecenter.webp" alt="Mapa">
+                            </div>
+                        </div>
+                        <small class="text-muted mt-2 text-center d-block">Usa el mouse para arrastrar y la rueda para zoom.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="split-section" id="sec-titanio">
+            <div class="section-cover">
+                <h2>Titanio</h2>
+                <span>Click para expandir</span>
+            </div>
+            <div class="section-content">
+                <button class="btn-close-section"><i class="fa-solid fa-xmark"></i> Cerrar</button>
+                <div class="content-row">
+                    <div class="col-info">
+                        <h1>Titanio</h1>
+                        <p class="description">
+                            Texto de Ejemplo
+                        </p>
+                    </div>
+                    <div class="col-map">
+
+                        <h4>Ubicación en el Mapa</h4>
+                        
+                        <div class="map-wrapper">
+                            <div class="map-controls">
+                                <button class="btn-zoom" onclick="zoomIn(this)"><i class="fa-solid fa-plus"></i></button>
+                                <button class="btn-zoom" onclick="zoomOut(this)"><i class="fa-solid fa-minus"></i></button>
+                                <button class="btn-zoom" onclick="resetZoom(this)"><i class="fa-solid fa-compress"></i></button>
+                            </div>
+
+                            <div class="map-frame" id="map-frame-scrap">
+                                <img class="panzoom-img" src="../img/map_thecenter.webp" alt="Mapa">
+                            </div>
+                        </div>
+                        <small class="text-muted mt-2 text-center d-block">Usa el mouse para arrastrar y la rueda para zoom.</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="metales.js"></script>
+</body>
+</html>
